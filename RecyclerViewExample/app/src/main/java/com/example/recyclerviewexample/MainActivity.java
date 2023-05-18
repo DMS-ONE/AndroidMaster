@@ -22,14 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> list;
 
-
-
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         ArrayList<String> testDataSet = new ArrayList<>();
         for(int i = 0;i<20;i++){
@@ -43,9 +39,5 @@ public class MainActivity extends AppCompatActivity {
 
         MainAdapter mainAdapter = new MainAdapter(testDataSet);
         recyclerView.setAdapter(mainAdapter);
-
-
-
-
     }
 }
