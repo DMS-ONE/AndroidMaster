@@ -37,7 +37,7 @@ public class SecoundActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String inputText = inputEditText.getText().toString();
-                Toast.makeText(SecoundActivity.this, "Input : " + inputText, Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Input : " + inputText, Toast.LENGTH_SHORT).show();
             }
 
 
