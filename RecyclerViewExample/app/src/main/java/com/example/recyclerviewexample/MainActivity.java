@@ -1,43 +1,42 @@
 package com.example.recyclerviewexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CursorAdapter;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ArrayList<String> list;
+    private MainAdapter adapter;
+    private ArrayList<String> itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> testDataSet = new ArrayList<>();
-        for(int i = 0;i<20;i++){
-            testDataSet.add("TEST DATA" + i);
-        }
+        itemList = new ArrayList<>();
+        adapter = new MainAdapter(itemList);
 
-        RecyclerView recyclerView =findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        Button add_btn = findViewById(R.id.add_btn);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager((Context) this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapter);
 
-        MainAdapter mainAdapter = new MainAdapter(testDataSet);
-        recyclerView.setAdapter(mainAdapter);
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addItem();
+            }
+        });
+    }
+    private void addItem() {
+        String newItem = "New Item" + (itemList.size() + 1);
+        itemList.add(newItem);
+        adapter.notifyDataSetChanged();
     }
 }
