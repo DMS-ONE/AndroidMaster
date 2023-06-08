@@ -24,45 +24,26 @@ public class SecoundActivity extends AppCompatActivity {
         super.onCreate(savedInstaanceState);
         setContentView(R.layout.activity_secound_activity);
 
-        binding =  ActivitySecoundActivityBinding.inflate(getLayoutInflater());
 
-        View view = binding.getRoot();
-        setContentView(view);
 
-<<<<<<< Updated upstream
+        binding = ActivitySecoundActivityBinding.inflate(getLayoutInflater());
+        //View view = binding.getRoot();
+        setContentView(binding.getRoot());
+
         Intent intent = getIntent();
         int itemNumber = intent.getIntExtra("item_number", -1);
-=======
-<<<<<<< Updated upstream
-        Intent intent =getIntent();
-        int itemNumber = intent.getIntExtra("item_number",-1);
-=======
-        //TextView itemNumberTextView = findViewById(R.id.itemNumberTextView);
-        TextView itemNumberTextView = binding.itemNumberTextView;
 
-<<<<<<< Updated upstream
-        Intent intent = getIntent();
-        int itemNumber = intent.getIntExtra("item_number", -1);
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+        TextView itemNumberTextView = findViewById(R.id.itemNumberTextView);
+        //TextView itemNumberTextView = binding.itemNumberTextView;
+
 
         itemNumberTextView.setText("Item Number: " + itemNumber);
-
-        showButton = findViewById(R.id.showButton);
-        inputEditText = findViewById(R.id.inputEditText);
-=======
-        Intent intent =getIntent();
-        int itemNumber = intent.getIntExtra("item_n.umber",-1);
-
-        itemNumberTextView.setText("Item Number: " + itemNumber);
-
 
 
         //showButton = findViewById(R.id.showButton);
         Button showButton = binding.showButton;
-        //inputEditText = findViewById(R.id.inputEditText);
-        EditText inputEditText = binding.inputEditText;
->>>>>>> Stashed changes
+        inputEditText = findViewById(R.id.inputEditText);
+        //EditText inputEditText = binding.inputEditText;
 
         showButton.setOnClickListener(new View.OnClickListener() {
 

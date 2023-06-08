@@ -18,8 +18,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private ArrayList<String> locallDataSet;
 
-<<<<<<< Updated upstream
-=======
     private List<ClipData.Item> itemList;
 
     public MainAdapter(List<ClipData.Item> itemList){
@@ -55,7 +53,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         }
 
     }
->>>>>>> Stashed changes
 
     //생성자
     public MainAdapter(ArrayList<String> dataSet) {
@@ -68,7 +65,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public MainAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item, parent, false);
-        MainAdapter.ViewHolder viewHolder = new MainAdapter.ViewHolder(view);
+        MainAdapter.ViewHolder viewHolder = new ViewHolder(view);
 
         return viewHolder;
     }
@@ -90,18 +87,5 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return locallDataSet.size();
-    }
-
-    //뷰 홀더 클래스
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            textView = itemView.findViewById(R.id.textView);
-        }
-        public TextView getTextView() {
-            return textView;
-        }
     }
 }
