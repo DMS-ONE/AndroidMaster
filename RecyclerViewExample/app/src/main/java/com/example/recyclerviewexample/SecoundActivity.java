@@ -24,8 +24,6 @@ public class SecoundActivity extends AppCompatActivity {
         super.onCreate(savedInstaanceState);
         setContentView(R.layout.activity_secound_activity);
 
-
-
         binding = ActivitySecoundActivityBinding.inflate(getLayoutInflater());
         //View view = binding.getRoot();
         setContentView(binding.getRoot());
